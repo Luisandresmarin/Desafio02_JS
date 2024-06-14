@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <h1>Pedir Stickers</h1>
+    <div id="stickers">
+        <div class="Sticker-container">
+            <img style="width: 300px; height: 300px;" src="assets/img/1.jfif" alt="Sticker 1">
+            <input type="number" id="sticker1" min="0" max="3">
+        </div>
+       
+        <div class="Sticker-container">
+            <img style="width:300px; height:300px;" src="assets/img/2.jfif" alt="Sticker 2">
+            <input type="number" id="sticker2" min="0" max="3">
+        </div>
+    
+        <div class="Sticker-container">
+            <img style="width:300px; height:300px;" src="assets/img/3.jfif" alt="Sticker 3">
+            <input type="number" id="sticker3" min="0" max="3">
+        </div>
+    </div>
+    <div class="btn">
+        <button id="pedir">Pedir Stickers</button>
+        <p id="mensaje"></p>
+    </div>
+    <script>
+      const stickers = document.getElementById('stickers');
+      const sticker1 = document.getElementById('sticker1');
+      const sticker2 = document.getElementById('sticker2');
+      const sticker3 = document.getElementById('sticker3');
+      const pedir = document.getElementById('pedir');
+      const mensaje = document.getElementById('mensaje');
+  
+      pedir.addEventListener('click', () => {
+        const total = parseInt(sticker1.value) + parseInt(sticker2.value) + parseInt(sticker3.value);
+        if (total <= 10) {
+          mensaje.textContent = `Llevas ${total} stickers`;
+        } else {
+          mensaje.textContent = 'Llevas demasiados stickers';
+        }
+      });
+    </script>
+    <script src="assets/js/script.js" ></script>   
+</body>
+</html>
